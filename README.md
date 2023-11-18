@@ -68,6 +68,11 @@ There are a few main concerns that we can see through the Evolution perspective 
 
 ### **Architectural Style**
 
+
+The architectural style of Modelio can be best described as **Layered**. In a Layered architecture, the application is divided into layers with a **Presentation** layer that handles UI. In the context of Modelio, this would be the part of the application that deals with rendering the UML diagrams and the user interface for model editing and other visual elements that the user interacts with. The **Logic** layer contains the core functionality of processing commands and making logic decisions. For Modelio, this handles the creation, manipulation and management of UML and BPMN models. It includes the rules and logic for how models are structured and maintained. Lastly, there is the **Data Access** layer, which is supposed to manage data persistence and retrieval. In Modelio, this layer manages the storage and retrieval of model data, possibly interacting with file systems to save and load models. 
+
+### **Design Patterns**
+
 **Pattern 1: Decorator**
 
 modelio/platform/platform.api/src/org/modelio/api/modelio/diagram/IDGDynamicDecorator.java
