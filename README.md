@@ -44,19 +44,19 @@ This is the official Github repository for Modelio stands as the source hosting 
 ## **Development View:**
 ![UML diagram](images/newUML.png "UML")
 **Legend**:
-**Solid Line**: Shows that a relationship exists between the components
-**Dashed Line**: The component that the arrow is coming from requires the component it is pointing to in order to run
+- Solid Line: Shows that a relationship exists between the components
+- Dashed Line: The component that the arrow is coming from requires the component it is pointing to in order to run
 
 **Modelio:** Major component that includes sub-components for different aspects of the applications:
 
 1. **Platform**: Encompoasses platform-specific components like API, core platform functionalities, MDA infrastructure, UI components, search engine, and update repository
 2. **BPMN**: Related to the BPMN diagram editor and its metamodel
 3. **UML**: Related to UML diagrams and their editors, metamodel API, and UI components
-   Input Values: Data or parameters provided to specific functionalities or processes within the UML-related components such as user-defined properties,   configurations, settings, etc.
+- Input Values: Data or parameters provided to specific functionalities or processes within the UML-related components such as user-defined properties,   configurations, settings, etc.
 Node Elements: Represents the individual components or entities in a diagram such as classes, interfaces, packages, or objects.
-Link Elements: Refer to the connections or relationships between the various nodes or components depicted in the diagrams. They represent associations, dependencies, inheritance, or other relationships between classes, objects, or other UML entities. 
-Style Elements: Style elements in UML pertain to the visual appearance or formatting applied to the elements within the diagrams. This includes information such as colors, fonts, line styles, etc. 
-Output Elements: Refers to the results or outputs generated from UML-related processes or functionalities. 
+- Link Elements: Refer to the connections or relationships between the various nodes or components depicted in the diagrams. They represent associations, dependencies, inheritance, or other relationships between classes, objects, or other UML entities. 
+- Style Elements: Style elements in UML pertain to the visual appearance or formatting applied to the elements within the diagrams. This includes information such as colors, fonts, line styles, etc. 
+- Output Elements: Refers to the results or outputs generated from UML-related processes or functionalities. 
 4. **Core**: Includes core functionalities like kernel, metamodel API, project data, session management, and utilities
 5. **Plugdule**: Contains the Modelermoduel component
 
