@@ -122,6 +122,10 @@ From a high level, the Liskov Substitution Principle states that in an object-or
 ### **Refactoring**
 The key changes that we made were inside of the ModelSearchPanel class. This class creates and manages a search panel on the Modelio platform. It sets up the UI elements and enables the functionality to search UML model elements. The **initialize()** method sets up the UI components of the search panel on the page. Within the **initialize()** method, there is a grid layout created with elements like labels, text fields and checkboxes being added. There’s also search criteria handler functions that specify what to do when a user selects certain search criteria. Previously, the logic for setting up all of these distinct elements was located within the initialize() function and was long, verbose and its function was not immediately clear. Therefore we used the extract function refactoring principle and consolidated all of the different element initializations into different functions. For example, the logic for setting up a case sensitive checkbox on the page has now been isolated in a **setupCaseSensitiveCheckbox()** function. 
 
+Link to forked Modelio Repo: https://github.com/kvajjhula/Modelio/tree/master/modelio
+
+* This repo has our refactored Modelio code
+
 ```
 private void setupCaseSensitiveCheckbox() {
    this.caseSensitiveCheckBox = new Button(this.topGroup, SWT.CHECK);
