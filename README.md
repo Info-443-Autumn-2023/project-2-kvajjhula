@@ -15,13 +15,14 @@ This open-source software was created by Modeliosoft, a company based in Paris, 
 
 ### Main Features
 
-* **UML Modeler:** Modelio is a modeling environment, supporting a wide range of models and diagrams, and providing model assistance and consistency-checking features
-* **BPMN support integrated with UML:** Modelio combines BPMN support and UMl support into one tool and can create diagrams that are dedicated to supporting business process modeling
-* **Java code generator:** The Java Designer module uses an RCP/Eclipse-style project file structure, and with this can support Java code generation and reverse, Javadoc generation and Java automation
-* **XMI import/export:** Modelio provides an XMI import/export feature that enables you to exchange UML2 models between different tools
-* **HTML model publishing:** With the HTML Publisher module, you can publish your models in HTML format
-* **Extension system:** Modelio can be extended for any language, methodology or modeling technique just by adding modules to your configuration
-* **Scripting language supports (Jython):** Modelio provides integrated support of the Jython scripting language, for online requests, small scripts and macro definition
+* **Versatile Modeling Environment:** Modelio offers a comprehensive modeling platform accommodating various models and diagrams, aiding users with consistency checks and model assistance.
+* **Unified BPMN and UML Support:** Seamlessly integrates BPMN (Business Process Model and Notation) alongside UML (Unified Modeling Language), facilitating specialized diagrams for business process modeling within a single tool.
+* **Java Code Generation:** The Java Designer module within Modelio utilizes an Eclipse-style project file structure to generate and reverse Java code, aiding in Javadoc creation and Java automation.
+* **XMI Import/Export:** Modelio includes support for XMI (XML Metadata Interchange) for exchanging UML2 models across different modeling tools.
+* **HTML Model Publishing:** Through the HTML Publisher module, users can publish their models in HTML format for easier sharing and accessibility.
+* **Flexible Extension System:** Modelio's modular design allows for easy extension, enabling integration with diverse languages, methodologies, and modeling techniques by adding custom modules to the configuration.
+* **Scripting Language Support (Jython):** Integrates support for Jython scripting language, enhancing flexibility in performing various tasks within the modeling environment.
+
 
 **Additional Information**
 To learn more about Modelio, here are some valuable links and websites:
@@ -42,27 +43,46 @@ This is the official Github repository for Modelio stands as the source hosting 
 
 ## **Development View:**
 ![UML diagram](images/uml.png "image_tooltip")
+**Legend**:
+**Solid Line**: Shows that a relationship exists between the components
+**Dashed Line**: The component that the arrow is coming from requires the component it is pointing to in order to run
 
+**Modelio:** Major component that includes sub-components for different aspects of the applications:
 
-Modelio: Major component that includes sub-components for different aspects of the applications:
+1. **Platform**: Encompoasses platform-specific components like API, core platform functionalities, MDA infrastructure, UI components, search engine, and update repository
+2. **BPMN**: Related to the BPMN diagram editor and its metamodel
+3. **UML**: Related to UML diagrams and their editors, metamodel API, and UI components
+   Input Values: Data or parameters provided to specific functionalities or processes within the UML-related components such as user-defined properties,   configurations, settings, etc.
+Node Elements: Represents the individual components or entities in a diagram such as classes, interfaces, packages, or objects.
+Link Elements: Refer to the connections or relationships between the various nodes or components depicted in the diagrams. They represent associations, dependencies, inheritance, or other relationships between classes, objects, or other UML entities. 
+Style Elements: Style elements in UML pertain to the visual appearance or formatting applied to the elements within the diagrams. This includes information such as colors, fonts, line styles, etc. 
+Output Elements: Refers to the results or outputs generated from UML-related processes or functionalities. 
+4. **Core**: Includes core functionalities like kernel, metamodel API, project data, session management, and utilities
+5. **Plugdule**: Contains the Modelermoduel component
 
-1. App: Contains various application-level components like audit, diagram editors, model browsers, project UI, update mechanisms, and more
-2. BPMN: Related to the BPMN diagram editor and its metamodel
-3. Core: Includes core functionalities like kernel, metamodel API, project data, session management, and utilities
-4. Platform: Encompoasses platform-specific components like API, core platform functionalities, MDA infrastructure, UI components, search engine, and update repository
-5. Plugdule: Contains the Modelermoduel component
-6. UML: Related to UML diagrams and their editors, metamodel API, and UI components
+### High-Level Codeline Model
+The Modelio directory has many components with the  main components being under the App. The “Modelio” repository contains the modules that we included in our UML diagram such as Platform, BPMN, UML, Core, and Plugdule which we determined to be the main features of the Modelio Repository. Focusing on these elements allows us to gain an understanding of the Modelio capabilities on a higher level. 
+![UML diagram](images/codeLineModel.png "uml")
+
+#### Testing
+In this Modelio GitHub Repository, there are no testing practices which indicates a lack of automated testing integration within the codebase.  Additionally,, there is no external Contribution Github Repo that is specified  anywhere throughout the repo. This suggests a potential opportunity to improve the development process by implementing robust  testing. Without specific documentation or configuration for testing, the process for running tests in Modelio is not clear.  Generally, in standard Java projects, the tests are usually run as part of the build process. 
+
+#### Configuration
+The pom.xml file indicates that Modelio uses Maven for its build process and is also configured for Java 11. The build process includes various plugins and dependencies, suggesting that a proper Maven and Java environment is necessary to build and use the system. There are no explicit instructions for using git branches or tags for building Modelio. 
+
 
 ## **Applied Perspective:**
 
-For the analysis of Modelio, we have chosen to consider this system from the _evolution perspective_. The evolution perspective is concerned with the system’s ability to be flexible with the change that comes with deploying changes and balancing that with the costs of providing this flexibility. This perspective is important to our system because of how it is used by its users and the frequent updates that come with Modelio. 
+For the analysis of Modelio, we have chosen to consider this system from the evolution perspective. The evolution perspective is concerned with the system’s ability to be flexible with the change that comes with deploying changes and balancing that with the costs of providing this flexibility. This perspective is important to our system because of how it is used by its users and the frequent updates that come with Modelio. 
 
 ### **Applying the Perspective**
 
 There are a few main concerns that we can see through the Evolution perspective that are relevant to the Modelio System. 
 
-* **Dimensions of Change:** Within the category of Dimensions of Change, we believe that _Integration Evolution and growth_ are extremely important to the long term stability of Modelio. Modelio has the ability to build diagrams and models from external files and coding languages. With this in mind, we can think about how this system is integrated with other external packages and platforms needing to ensure that it is flexible enough to change with those systems. 
+* **Dimensions of Change:** Within the category of Dimensions of Change, we believe that Integration Evolution and growth are extremely important to the long term stability of Modelio. Modelio has the ability to build diagrams and models from external files and coding languages. With this in mind, we can think about how this system is integrated with other external packages and platforms needing to ensure that it is flexible enough to change with those systems. 
+
 * **Likelihood of Change:** Modelio prioritizes user and business needs by adapting to evolving trends in coding languages and models. The trends are constantly changing, meaning that having a system that is malleable, will allow for smoother and more efficient integration. 
+
 
 **Identify Styles & Patterns Used:**
 
@@ -96,3 +116,40 @@ In the Modelio codebase, the Open Closed Principle is evident in various parts. 
 ### **Liskov Substitution Principle**
 
 From a high level, the Liskov Substitution Principle states that in an object-oriented program, if we substitute a superclass object reference with an object of any of its subclasses, the program should not break. For context of how this principle is used, the “core” component of the Modelio codebase, serves various purposes in the context of creating UML diagrams as well as Business Process Model and Notation. There is a section in the codebase that is dedicated towards maintaining the base functionalities for BPMN elements, which provide the common features and properties that are shared across different BPMN elements like tasks, events, gateways, etc. For example, the **BPMNItemAwareElementImpl** class, which is an abstract class extending **BPMNFlowElementImpl** and implementing the **BPMNItemAwareElement** interface, provides methods like **getTargetofDataAssociation(), getItemSubjectRef(), setDataState()**. These methods are overridden in **BPMNItemAwareElementImpl()** and provide specific implementations while maintaining the contract defined by the base class and interface, adhering to the LSP.
+
+## **System Improvement**
+
+### **Refactoring**
+The key changes that we made were inside of the ModelSearchPanel class. This class creates and manages a search panel on the Modelio platform. It sets up the UI elements and enables the functionality to search UML model elements. The initialize() method sets up the UI components of the search panel on the page. Within the initialize() method, there is a grid layout created with elements like labels, text fields and checkboxes being added. There’s also search criteria handler functions that specify what to do when a user selects certain search criteria. Previously, the logic for setting up all of these distinct elements was located within the initialize() function and was long, verbose and its function was not immediately clear. Therefore we used the extract function refactoring principle and consolidated all of the different element initializations into different functions. For example, the logic for setting up a case sensitive checkbox on the page has now been isolated in a setupCaseSensitiveCheckbox() function. 
+
+```
+private void setupCaseSensitiveCheckbox() {
+   this.caseSensitiveCheckBox = new Button(this.topGroup, SWT.CHECK);
+   this.caseSensitiveCheckBox.setText("");
+   this.caseSensitiveCheckBox.setToolTipText(CoreUi.I18N.getString("ModelSearch.NameCase.tooltip"));
+   gridData = new GridData(SWT.RIGHT, SWT.CENTER, false, false);
+   this.caseSensitiveCheckBox.setLayoutData(gridData);
+
+
+}
+
+
+private void setupCaseSensitiveCheckboxEventListeners() {
+   this.caseSensitiveCheckBox.addSelectionListener(new SelectionAdapter() {
+       @Override
+       public void widgetSelected(SelectionEvent e) {
+           // TODO Auto-generated method stub
+           super.widgetSelected(e);
+           ModelSearchPanel.this.searchController.runSearch();
+       }
+   });
+}
+```
+
+
+
+
+
+
+
+
