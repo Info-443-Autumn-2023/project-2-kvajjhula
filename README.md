@@ -42,7 +42,7 @@ This is the Modelio version that allows for collaborative Business or Software m
 This is the official Github repository for Modelio stands as the source hosting Modelio’s system code, utilities, and documentation. It serves as a central point for accessing, understanding, and using Modelio and also keeps the users informed about the latest updates and improvements and allows them to download it for usage. 
 
 ## **Development View:**
-![UML diagram](images/uml.png "image_tooltip")
+![UML diagram](images/newUML.png "UML")
 **Legend**:
 **Solid Line**: Shows that a relationship exists between the components
 **Dashed Line**: The component that the arrow is coming from requires the component it is pointing to in order to run
@@ -62,7 +62,7 @@ Output Elements: Refers to the results or outputs generated from UML-related pro
 
 ### High-Level Codeline Model
 The Modelio directory has many components with the  main components being under the App. The “Modelio” repository contains the modules that we included in our UML diagram such as Platform, BPMN, UML, Core, and Plugdule which we determined to be the main features of the Modelio Repository. Focusing on these elements allows us to gain an understanding of the Modelio capabilities on a higher level. 
-![UML diagram](images/codeLineModel.png "uml")
+![Codeline diagram](images/codeLineModel.png "uml")
 
 #### Testing
 In this Modelio GitHub Repository, there are no testing practices which indicates a lack of automated testing integration within the codebase.  Additionally,, there is no external Contribution Github Repo that is specified  anywhere throughout the repo. This suggests a potential opportunity to improve the development process by implementing robust  testing. Without specific documentation or configuration for testing, the process for running tests in Modelio is not clear.  Generally, in standard Java projects, the tests are usually run as part of the build process. 
